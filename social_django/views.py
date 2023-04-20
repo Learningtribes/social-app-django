@@ -7,7 +7,7 @@ from django.views.decorators.cache import never_cache
 
 from social_core.utils import setting_name
 from social_core.actions import do_auth, do_complete, do_disconnect
-from student.views import sitel_router
+from student.views import myacademy_router
 from .utils import psa
 
 
@@ -29,7 +29,7 @@ def auth(request, backend):
 @psa('{0}:complete'.format(NAMESPACE))
 def complete(request, backend, *args, **kwargs):
     """Authentication complete view"""
-    return sitel_router(request)
+    return myacademy_router(request)
 
 
 @never_cache
